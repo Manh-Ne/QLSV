@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#B1C8D3"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textColor="#FF0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Management" />
+    <Button
+        android:background="@drawable/background_button"
+        android:layout_marginTop="90dp"
+        android:id="@+id/buttonSubject"
+        android:textColor="@color/white"
+        android:text="Subject"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"></Button>
+    <Button
+        android:background="@drawable/background_button"
+        android:layout_marginTop="20dp"
+        android:id="@+id/buttonAuthor"
+        android:textColor="@color/white"
+        android:text="Author"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"></Button>
+    <Button
+        android:background="@drawable/background_button"
+        android:layout_marginTop="20dp"
+        android:id="@+id/buttonExit"
+        android:textColor="@color/white"
+        android:text="Exit"
+        android:layout_gravity="center"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"></Button>
+</LinearLayout>

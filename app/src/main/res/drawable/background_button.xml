@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- HIển thị khi không nhấn button -->
+<item android:state_pressed="false">
+    <shape>
+        <!-- Màu nền button -->
+        <solid android:color="#75A877"></solid>
+        <!-- Tạo viền cho button-->
+        <stroke android:width="3dp"
+            android:color="#FFFFFF"></stroke>
+        <!-- Bo tròn 4 góc button-->
+        <corners android:radius="35dp"></corners>
+    </shape>
+</item>
+</selector>
