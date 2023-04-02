@@ -84,6 +84,7 @@ public class ActivitySubject extends AppCompatActivity {
             //nếu click vào add thì chuyển qua màn hinhg add subject
             case R.id.menuadd:
                 Intent intent1 = new Intent(ActivitySubject.this,ActivityAddSubject.class);
+                startActivity(intent1);
                 break;
 
                 //Nếu click vào nút còn lại là nút back thì quay lại main

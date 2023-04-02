@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSubject,btnAuthor,btnExit;
+    Button btnSubject,btnAuthor,btnExit,btnYes,btnNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         // tắt click ngoài là thoát
         dialog.setCanceledOnTouchOutside(false);
 
-        Button btnYes = dialog.findViewById(R.id.buttonYes);
-        Button btnNo = dialog.findViewById(R.id.buttonNo);
+        btnYes = dialog.findViewById(R.id.buttonYes);
+        btnNo = dialog.findViewById(R.id.buttonNo);
 
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
