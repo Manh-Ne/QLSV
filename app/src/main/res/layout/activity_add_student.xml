@@ -14,43 +14,67 @@
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="Thêm môn học"></TextView>
+        android:text="Thêm Sinh Viên"></TextView>
     <EditText
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:id="@+id/EditTenmonhoc"
-        android:hint="Nhập Tên Môn Học"
+        android:id="@+id/EditTensinhvien"
+        android:hint="Nhập Tên Sinh Viên"
+        />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="Giới Tính"
+        android:textColor="#000000"
+
+        />
+
+    <RadioGroup
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:layout_gravity="center">
+        <RadioButton
+            android:id="@+id/radiobuttonnam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Nam"
+            android:textColor="#000000"></RadioButton>
+        <RadioButton
+            android:layout_marginLeft="50dp"
+            android:id="@+id/radiobuttonnu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nữ"
+            android:textColor="#000000"></RadioButton>
+    </RadioGroup>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/EditMasinhvien"
+        android:hint="Mã SInh Viên"
         />
     <EditText
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:id="@+id/EditSotin"
-        android:hint="Nhập Số Tín"
-        />
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditThoigian"
-        android:hint="Nhập Thời Gian"
-        />
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditDiachi"
-        android:hint="Nhập Dịa chỉ"
+        android:id="@+id/Editsinhnhat"
+        android:hint="Sinh Nhật"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bt_addMonhoc"
+        android:id="@+id/bt_addSinhVien"
         android:text="Thêm"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"></Button>
