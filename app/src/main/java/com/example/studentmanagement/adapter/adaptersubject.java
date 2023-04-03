@@ -73,21 +73,24 @@ public class adaptersubject extends BaseAdapter {
         imageInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                context.information(id);
             }
         });
 
+        // click icon delete
         imageDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Gọi tới phương thức delete
+                context.delete(id);
             }
         });
 
+        // click icon update
         imageUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                context.update(id);
             }
         });
         return view;

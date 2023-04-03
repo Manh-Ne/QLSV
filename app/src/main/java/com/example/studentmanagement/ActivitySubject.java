@@ -3,6 +3,7 @@ package com.example.studentmanagement;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.widget.Toolbar;
 
@@ -104,6 +106,100 @@ public class ActivitySubject extends AppCompatActivity {
             Intent intent = new Intent(ActivitySubject.this,MainActivity.class);
             startActivity(intent);
             finish();
+        }
+    }
+
+
+    public void information(final int pos){
+        Cursor cursor = database.getDataSubject();
+
+        while (cursor.moveToNext()){
+            int id = cursor.getInt(0);
+            if (id == pos){
+                Intent intent = new Intent(ActivitySubject.this, ActivitySubjectInformation.class);
+
+                intent.putExtra("id", id);
+                String title = cursor.getString(1);
+                int credit = cursor.getInt(2);
+                String time = cursor.getString(3);
+                String place = cursor.getString(4);
+
+                intent.putExtra("title", title);
+                intent.putExtra("credit", credit);
+                intent.putExtra("time", time);
+                intent.putExtra("place", place);
+
+
+                startActivity(intent);
+            }
+        }
+    }
+
+    // Phương thức xóa subject
+    public void delete(final int position){
+        // Đối thượng cửa sổ
+        Dialog dialog = new Dialog(this);
+
+        // Nạp layout vào dialog
+        dialog.setContentView(R.layout.dialogdeletesubject);
+
+        dialog.setCanceledOnTouchOutside(false);
+
+        Button btnYes = dialog.findViewById(R.id.buttonYesDeleteSubject);
+        Button btnNo = dialog.findViewById(R.id.buttonNoDeleteSubject);
+
+        // Mở dialog nếu ấn Yes
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //database = new database(ActivitySubject.this);
+
+                // Xóa subject trong csdl
+                database.DeleteSubject(position);
+
+                // xóa student
+                database.DeleteSubjectStudent(position);
+
+                // Cập nhật lại Activity Subject
+                Intent intent = new Intent(ActivitySubject.this, ActivitySubject.class);
+                startActivity(intent);
+            }
+        });
+
+        // Đóng dialog nếu ấn No
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+        // Show dialog
+        dialog.show();
+    }
+
+    public void update(final int pos){
+        Cursor cursor = database.getDataSubject();
+
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+
+            if (id == pos) {
+                Intent intent = new Intent(ActivitySubject.this, ActivityUpdateSubject.class);
+
+                intent.putExtra("id", id);
+                String title = cursor.getString(1);
+                int credit = cursor.getInt(2);
+                String time = cursor.getString(3);
+                String place = cursor.getString(4);
+
+                // Gửi dữ liệu qua activity update
+                intent.putExtra("title", title);
+                intent.putExtra("credit", credit);
+                intent.putExtra("time", time);
+                intent.putExtra("place", place);
+
+                startActivity(intent);
+            }
         }
     }
 }

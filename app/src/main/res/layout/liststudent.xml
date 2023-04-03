@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:descendantFocusability="blocksDescendants"
+    android:background="#ACA388"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Student name"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:id="@+id/TextViewStudentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:text="Code: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:id="@+id/TextViewStudentCode"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageButton
+        android:src="@drawable/ic_baseline_subject_24"
+        android:layout_marginTop="25dp"
+        android:id="@+id/studentinformation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"></ImageButton>
+
+    <ImageButton
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_baseline_update_24"
+        android:layout_marginTop="25dp"
+        android:id="@+id/studentupdate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"></ImageButton>
+
+    <ImageButton
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_baseline_delete_24"
+        android:layout_marginTop="25dp"
+        android:id="@+id/studentdelete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"></ImageButton>
+</LinearLayout>

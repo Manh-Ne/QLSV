@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.model.Subject;
 
 public class database extends SQLiteOpenHelper {
@@ -103,5 +104,40 @@ public class database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         int res = db.delete(TABLE_SUBJECTS,ID_SUBJECTS+" = "+i,null);
         return  res;
+    }
+
+    // Dùng để xóa các student của subject đã bị xóa
+    public int DeleteSubjectStudent(int i){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int res = db.delete(TABLE_STUDENT, ID_SUBJECTS + " = " + i, null);
+        return res;
+    }
+
+    public void AddStudent(Student student){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(STUDENT_NAME, student.getStudent_name());
+        values.put(SEX, student.getSex());
+        values.put(STUDENT_CODE, student.getStudent_code());
+        values.put(DATE_OF_BIRTH, student.getDate_of_birth());
+        values.put(ID_SUBJECTS, student.getId_subject());
+
+        db.insert(TABLE_STUDENT, null, values);
+        db.close();
+    }
+
+    // Lấy tất cả sv môn học đó
+    public Cursor getDataStudent(int id_subject){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor res = db.rawQuery("SELECT * FORM " + TABLE_STUDENT + " WHERE " + ID_SUBJECTS + " = " + id_subject, null);
+        return res;
+    }
+
+    public int DeleteStudent(int i){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int res = db.delete(TABLE_STUDENT, ID_STUDENT + " = " + i, null);
+        return res;
     }
 }

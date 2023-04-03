@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#92AAAE"
+    android:layout_width="350dp"
+    android:layout_height="200dp">
+
+    <TextView
+        android:textSize="25sp"
+        android:layout_marginTop="20dp"
+        android:text="Do you want to update?"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginRight="15dp"
+            android:id="@+id/buttonYesUpdate"
+            android:backgroundTint="#FFFFFF"
+            android:text="Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+        <Button
+            android:layout_marginLeft="15dp"
+            android:id="@+id/buttonNoUpdate"
+            android:backgroundTint="#FFFFFF"
+            android:text="No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+</LinearLayout>

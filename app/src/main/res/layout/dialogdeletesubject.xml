@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#92AAAE"
+
+    android:layout_width="350dp"
+    android:layout_height="200dp">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="Delete Subject ??."
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonYesDeleteSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Yes"></Button>
+        <Button
+            android:id="@+id/buttonNoDeleteSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="No"></Button>
+
+    </LinearLayout>
+</LinearLayout>
