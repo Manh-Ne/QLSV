@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-
-import com.example.qlsv.R;
 import com.example.studentmanagement.database.database;
 
 public class ActivityStudent extends AppCompatActivity {

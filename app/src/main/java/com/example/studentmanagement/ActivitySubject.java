@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.qlsv.R;
+
 import com.example.studentmanagement.adapter.adaptersubject;
 import com.example.studentmanagement.database.database;
 import com.example.studentmanagement.model.Subject;

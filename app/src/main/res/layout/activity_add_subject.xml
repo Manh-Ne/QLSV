@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:orientation="vertical"
     tools:context=".ActivityAddSubject">
 <TextView
@@ -53,59 +52,5 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Button>
-=======
-    tools:context=".ActivityAddSubject"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:textColor="#F44336"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="Thêm môn học"></TextView>
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditTenmonhoc"
-        android:hint="Nhập Tên Môn Học"
-        />
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditSotin"
-        android:hint="Nhập Số Tín"
-        />
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditThoigian"
-        android:hint="Nhập Thời Gian"
-        />
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/EditDiachi"
-        android:hint="Nhập Dịa chỉ"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_addMonhoc"
-        android:text="Thêm"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"></Button>
 
-
-
->>>>>>> 23d02bc818082cd0561bc38787c5e5916761a387
 </LinearLayout>
