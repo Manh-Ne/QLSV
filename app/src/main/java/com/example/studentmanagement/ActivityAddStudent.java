@@ -51,6 +51,7 @@ public class ActivityAddStudent extends AppCompatActivity {
     private void DialogAdd(int id_subject) {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialogaddstudent);
+        dialog.setCanceledOnTouchOutside(false);
         
         Button btnYes = dialog.findViewById(R.id.buttonYesAddStudent);
         Button btnNo = dialog.findViewById(R.id.buttonNoAddStudent);
@@ -62,25 +63,36 @@ public class ActivityAddStudent extends AppCompatActivity {
                 String code = editTextStudentCode.getText().toString().trim();
                 String birthday = editTextDateofbirth.getText().toString().trim();
                 String sex = "";
-                
+                //ktra radio button true tai dau lay gtri do
                 if (radioButtonMale.isChecked()){
                     sex = "Male";
-                }
-                else if (radioButtonFemale.isChecked()){
+                } else if (radioButtonFemale.isChecked()) {
                     sex = "Female";
                 }
-                if (name.equals("") || code.equals("") || birthday.equals("") || sex.equals("")){
+
+                if(name.equals("") || code.equals("") || birthday.equals("") || sex.equals("")){
                     Toast.makeText(ActivityAddStudent.this, "Did not enter enough information", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Intent intent = new Intent(ActivityAddStudent.this, ActivityStudent.class);
-                    intent.putExtra("id_subject", id_subject);
+                    Student student = CreateStudent(id_subject);
+
+                    database.AddStudent(student);
+
+                    Intent intent = new Intent(ActivityAddStudent.this,ActivityStudent.class);
+                    intent.putExtra("id_subject",id_subject);
                     startActivity(intent);
 
-                    Toast.makeText(ActivityAddStudent.this, "more success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityAddStudent.this,"more success",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
     }
     
     private Student CreateStudent(int id_subject){

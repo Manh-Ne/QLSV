@@ -9,7 +9,7 @@ public class Student {
     private String date_of_birth;
     private int id_subject;
 
-    public Student(String student_name, String sex, String student_code, int date_of_birth) {
+    public Student(String student_name, String sex, String student_code, String date_of_birth) {
         this.student_name = student_name;
         this.sex = sex;
         this.student_code = student_code;
