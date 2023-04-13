@@ -3,17 +3,12 @@ package com.example.studentmanagement;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RadioButton;
 
 import com.example.studentmanagement.adapter.adapterstudent;
 import com.example.studentmanagement.database.database;
@@ -32,15 +27,12 @@ public class ActivityStudent extends AppCompatActivity {
     int id_subject = 0;
     int counter = 0;
 
-    Button buttonAddstudent;
-    EditText editTextStudentName,editTextStudentCode,editTextDateofbirth;
-    RadioButton radioButtonMale,radioButtonFemale;
     database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_student);
+        setContentView(R.layout.activity_student);
 
         toolbar = findViewById(R.id.toolbarstudent);
         listViewstudent = findViewById(R.id.listviewstudent);
@@ -76,27 +68,13 @@ public class ActivityStudent extends AppCompatActivity {
         cursor.close();
 
 
-
-        buttonAddstudent = findViewById(R.id.bt_addSinhVien);
-
-        editTextStudentName = findViewById(R.id.EditTensinhvien);
-        editTextStudentCode = findViewById(R.id.EditMasinhvien);
-        editTextDateofbirth = findViewById(R.id.Editsinhnhat);
-
-
-        radioButtonMale = findViewById(R.id.radiobuttonnam);
-        radioButtonFemale = findViewById(R.id.radiobuttonnu);
-//chua fix
-//        Intent intent = getIntent();
-        
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menuaddstudent, menu);
-        return super.onCreateOptionsMenu(menu);
+
+        return true;
     }
 
     @Override
@@ -128,4 +106,5 @@ public class ActivityStudent extends AppCompatActivity {
             finish();
         }
     }
+
 }

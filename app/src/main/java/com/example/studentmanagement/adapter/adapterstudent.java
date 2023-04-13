@@ -1,6 +1,5 @@
 package com.example.studentmanagement.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +44,8 @@ public class adapterstudent extends BaseAdapter {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        view = inflater.inflate(R.id.listviewstudent);
+//        view.findViewById(R.id.listviewstudent);
+        view = inflater.inflate(R.layout.liststudent, null);
 
         TextView txtName = view.findViewById(R.id.TextViewStudentName);
         TextView txtCode = view.findViewById(R.id.TextViewStudentCode);
