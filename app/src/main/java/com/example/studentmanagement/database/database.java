@@ -103,7 +103,7 @@ public class database extends SQLiteOpenHelper {
         //chú ý getwritedb là cả đọc và ghi
         //getread chỉ đọc ko dc phép chỉnh sửa
         SQLiteDatabase db = this.getWritableDatabase();
-        int res = db.delete(TABLE_SUBJECTS,ID_SUBJECTS+" = "+i,null);
+        int res = db.delete(TABLE_SUBJECTS,ID_SUBJECTS+" = " + i,null);
         return  res;
     }
 

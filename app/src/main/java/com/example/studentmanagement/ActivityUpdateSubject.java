@@ -15,97 +15,105 @@ import com.example.studentmanagement.model.Subject;
 
 public class ActivityUpdateSubject extends AppCompatActivity {
 
-    EditText edtUpdateTitle, edtUpdateCredit, edtUpdateTime, edtUpdatePlace;
-    Button btnUpdateSubject;
+    EditText udTitle,udCredit,udTime,udPlace;
+    Button buttonUpdate;
 
-    com.example.studentmanagement.database.database database;
-
+    database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_subject);
 
-        edtUpdateTitle = findViewById(R.id.EditTextUpdateSubjectTitle);
-        edtUpdateCredit = findViewById(R.id.EditTextUpdateSubjectCredit);
-        edtUpdateTime = findViewById(R.id.EditTextUpdateSubjectTime);
-        edtUpdatePlace = findViewById(R.id.EditTextUpdateSubjectPlace);
-        btnUpdateSubject = findViewById(R.id.buttonUpdateSubject);
-
-        // Lấy dữ liệu intent
         Intent intent = getIntent();
 
-        int id = intent.getIntExtra("id", 0);
+        int id = intent.getIntExtra("id",0);
+
         String title = intent.getStringExtra("title");
-        int credit = intent.getIntExtra("credit", 0);
+        int credit = intent.getIntExtra("credit",0);
         String time = intent.getStringExtra("time");
         String place = intent.getStringExtra("place");
 
-        // Gắn giá trị lên
-        edtUpdateTitle.setText(title);
-        edtUpdateCredit.setText(credit + "");
-        edtUpdateTime.setText(time);
-        edtUpdatePlace.setText(place);
+        udCredit = findViewById(R.id.EditTextUpdateSubjectCredit);
+        udPlace = findViewById(R.id.EditTextUpdateSubjectPlace);
+        udTime = findViewById(R.id.EditTextUpdateSubjectTime);
+        udTitle = findViewById(R.id.EditTextUpdateSubjectTitle);
+        buttonUpdate = findViewById(R.id.buttonUpdateSubject);
+
+        udTitle.setText(title);
+        udCredit.setText(credit+"");
+        udTime.setText(time);
+        udPlace.setText(place);
 
         database = new database(this);
 
-        btnUpdateSubject.setOnClickListener(new View.OnClickListener() {
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 DialogUpdate(id);
             }
         });
     }
-
+    //Dialog Update
     private void DialogUpdate(int id) {
 
-        Dialog dialog = new Dialog(this);
+        //Tạo đối tượng cửa sổ dialog
+        Dialog dialog  =  new Dialog(this);
 
+        //Nạp layout vào
         dialog.setContentView(R.layout.dialogupdatesubject);
 
+        //Click No mới thoát, click ngoài ko thoát
         dialog.setCanceledOnTouchOutside(false);
 
-        Button btnYes = dialog.findViewById(R.id.buttonYesDeleteSubject);
-        Button btnNo = dialog.findViewById(R.id.buttonNoDeleteSubject);
+        //Ánh xạ
+        Button btnYes = dialog.findViewById(R.id.buttonYesUpdate);
+        Button btnNo = dialog.findViewById(R.id.buttonNoUpdate);
 
-        // Mở dialog nếu ấn Yes
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String subjecttitle = edtUpdateTitle.getText().toString().trim();
-                String credit = edtUpdateCredit.getText().toString().trim();
-                String time = edtUpdateTime.getText().toString().trim();
-                String place = edtUpdatePlace.getText().toString().trim();
+            public void onClick(View v) {
 
-                if (subjecttitle.equals("") || credit.equals("") || time.equals("") || place.equals("")) {
-                    Toast.makeText(ActivityUpdateSubject.this, "Did you enter enough information", Toast.LENGTH_SHORT).show();
-                } else {
-                    Subject subject = UpdateSubject();
-                    database.UpdateSubject(subject, id);
+                String subjecttitle = udTitle.getText().toString();
+                String credits = udCredit.getText().toString();
+                String time = udTime.getText().toString();
+                String place = udPlace.getText().toString();
 
-                    // Update thành công thì qua Activity Subject
-                    Intent intent = new Intent(ActivityUpdateSubject.this, ActivitySubject.class);
+                Subject subject = updatesubject();
+
+                if(subjecttitle.equals("") || credits.equals("") || time.equals("") || place.equals("")){
+                    Toast.makeText(ActivityUpdateSubject.this,"Did not enter enough information",Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    database.UpdateSubject(subject,id);
+                    //Khởi tạo lại activity main
+                    Intent intent = new Intent(ActivityUpdateSubject.this,ActivitySubject.class);
+
                     startActivity(intent);
+                    Toast.makeText(ActivityUpdateSubject.this,"more success",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
+        //Nếu no thì đóng dialog
         btnNo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 dialog.cancel();
             }
         });
-        // Show dialog
+        //show dialog lên activity
         dialog.show();
     }
+    //Create Subject
+    private Subject updatesubject(){
 
-    private Subject UpdateSubject() {
-        String subjecttitle = edtUpdateTitle.getText().toString().trim();
-        int credit = Integer.parseInt(edtUpdateCredit.getText().toString().trim());
-        String time = edtUpdateTime.getText().toString().trim();
-        String place = edtUpdatePlace.getText().toString().trim();
+        String subjecttitle = udTitle.getText().toString();
+        int credits = Integer.parseInt(udCredit.getText().toString());
+        String time = udTime.getText().toString();
+        String place = udPlace.getText().toString();
 
-        Subject subject = new Subject(subjecttitle, credit, time, place);
+        Subject subject = new Subject(subjecttitle,credits,time,place);
         return subject;
     }
 }

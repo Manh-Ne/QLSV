@@ -185,8 +185,8 @@ public class ActivitySubject extends AppCompatActivity {
 
             if (id == pos) {
                 Intent intent = new Intent(ActivitySubject.this, ActivityUpdateSubject.class);
-
                 intent.putExtra("id", id);
+
                 String title = cursor.getString(1);
                 int credit = cursor.getInt(2);
                 String time = cursor.getString(3);
