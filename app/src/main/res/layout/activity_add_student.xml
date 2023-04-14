@@ -14,14 +14,14 @@
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="Thêm Sinh Viên"></TextView>
+        android:text="ADD STUDENT"></TextView>
     <EditText
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:id="@+id/EditTensinhvien"
-        android:hint="Nhập Tên Sinh Viên"
+        android:hint="Name"
         />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:text="Giới Tính"
+        android:text="SEX"
         android:textColor="#000000"
 
         />
@@ -45,14 +45,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Nam"
+            android:text="Male"
             android:textColor="#000000"></RadioButton>
         <RadioButton
             android:layout_marginLeft="50dp"
             android:id="@+id/radiobuttonnu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nữ"
+            android:text="Female"
             android:textColor="#000000"></RadioButton>
     </RadioGroup>
     <EditText
@@ -61,7 +61,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:id="@+id/EditMasinhvien"
-        android:hint="Mã SInh Viên"
+        android:hint="Code"
         />
     <EditText
         android:layout_width="300dp"
@@ -69,13 +69,13 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:id="@+id/Editsinhnhat"
-        android:hint="Sinh Nhật"
+        android:hint="Date of Birth"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bt_addSinhVien"
-        android:text="Thêm"
+        android:text="ADD"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"></Button>
 

@@ -16,21 +16,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"></TextView>
     <EditText
-        android:hint="Tên môn học"
+        android:hint="Subject"
         android:id="@+id/EditTextSubjectTitle"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="60dp"></EditText>
     <EditText
-        android:hint="Số tín chỉ"
+        android:hint="Credit"
         android:id="@+id/EditTextSubjectCredit"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="60dp"></EditText>
     <EditText
-        android:hint="Thời gian học"
+        android:hint="Time"
         android:id="@+id/EditTextSubjectTime"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
@@ -43,7 +43,7 @@
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:hint="Địa điểm"></EditText>
+        android:hint="Address"></EditText>
 
     <Button
         android:layout_marginTop="10dp"

@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_marginTop="20dp"
-        android:text="Delete Subject ??."
+        android:text="Do you want Delete Subject ??."
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="25sp"

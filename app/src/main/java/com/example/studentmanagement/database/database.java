@@ -50,6 +50,7 @@ public class database extends SQLiteOpenHelper {
             TABLE_SUBJECTS+"("+ID_SUBJECTS+"))";
 
     public database(@Nullable Context context) {
+
         super(context, DATABASE_NAME,null,VERSION);
     }
 

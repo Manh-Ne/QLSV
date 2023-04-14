@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Môn học"
+            android:text="Subject"
             android:textSize="25sp"
             android:textColor="#000000"
             android:id="@+id/TextViewSubjectTitle"
@@ -28,7 +28,7 @@
             <TextView
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:text="Số tín chỉ: "
+                android:text="Credit : "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></TextView>
             <TextView
